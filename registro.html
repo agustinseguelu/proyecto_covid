@@ -1,0 +1,101 @@
+{% include 'base.html' %}
+{% load static %}
+
+{% block container %}
+
+
+<head>
+    <script>
+        $(document).ready(function(){
+       $('select').formSelect();
+        });
+    </script>
+    <script>  
+        $(document).ready(function(){
+        $('.datepicker').datepicker();
+        });
+    </script>
+</head>
+
+<!--Editar de aquí para abajo-->
+
+
+<h5 style="text-align: center;">Registro de muertes por COVID-19</h5>
+<body class="indigo lighten-5"></body>
+<div class="row">
+  <div class="col s7 offset-s3">
+    <div class="card blue lighten-5">
+      <form id="form1" action="{% url 'registro' %}" method="post">
+        {% csrf_token %}
+        <h6 style="text-align: center">Ingrese la fecha</h6>
+        <input type="text" class="datepicker" name = "fecha">
+          <form action="# {% url 'registro' %}" id="form1" method="post"></form>
+          <h6 style="text-align: center">¿Qué resultado tuvo el test para COVID-19 del paciente?</h6>
+            <div class="input-field col s12">
+              <select id="covid" name="covid">
+                <option value="" disabled selected>Escoge la opción</option>
+                <option value="1">Positivo</option>
+                <option value="2">Negativo</option>
+                <option value="3">No se realizo</option>
+              </select>
+            </div>
+         </form>
+            <h6 style="text-align: center">Indique qué síntomas presentaba el fallecido</h6>
+            <table>
+             <thead>
+                <tr>
+                  <th>Tipo de Sintomas</th>
+                  <th>Sintomas</th>
+               </tr>
+              </thead>
+                <tbody>
+                       <tr>
+                          <td>Sintomas Habituales</td>
+                          <td><div class="input-field">
+                            <select multiple>
+                              {%for h in habituales%}
+                              <option value="1" name="habituales">{{h}}</option>
+                             {%endfor%}
+                            </select>
+                         </td></div>
+                       </tr>
+                     <tr>
+                        <td>Sintomas Menos Comunes</td>
+                        <td><div class="input-field">
+                            <select multiple>
+                              {%for m in menos%}
+                              <option value="2" name="menos">{{m}}</option>
+                              {%endfor%}
+                           </select>
+                        </td></div>
+                      </tr>
+                      <tr>
+                        <td><d>Sintomas Graves</d></td>
+                        <td><div class="input-field">
+                            <select multiple>
+                              {%for g in graves%}
+                              <option value="3" name="graves">{{g}}</option>
+                              {%endfor%}
+                            </select>
+                         </td></div>
+                      </tr>
+                      <input id="idregistro" name="idregistro" type="hidden" value="{{idregistro}}">
+             </tbody>
+          </table>
+          <div class="row" style="margin-bottom: 0px;">
+            <div class="input-field col s12" style="text-align:center">
+              <button 
+              class="btn waves-effect waves-light" 
+              type="submit" 
+              name="submit">
+              Enviar
+              </button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+</html>
+
+{% endblock %}
