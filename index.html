@@ -1,78 +1,24 @@
 {% include 'base.html' %}
+
 {% block container %}
 
-<div class="row">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title style="text-align:center">Bienvenido</title>
+  </head>
+  <body>
+  <h2 style="text-align:center">Área para miembros</h2>
+  <div class="col s12"> 
+     <p style="text-align:center">Bienvenido <b>{{request.user.username}}</b>, esta página es exclusiva para usuarios registrados.</p>
+  </div>
 
-  <div class="col s12">
-    <h1 style="text-align:center;">Estadisticas del Covid-19</h1>
-  </div>
-  <div class="col s12">
-    <h5 style="text-align:center;"> Resumen de sus principales sintomas: </h5>
-  </div>
-  <div class="col s12" style="text-align:center;"> 
-    <table>
-      <thead>
-        <tr>
-            <th>Sintomas</th>
-            <th>Cantidad de contagiados</th>
-            <th>Porcentaje respecto a la poblacion total</th>
-        </tr>
-      </thead>
+  <hr />
 
-      <tbody>
-        <tr>
-          <td>Fiebre</td>
-          <td>x</td>
-          <td>(x * 100)/Total personas</td>
-        </tr>
-        <tr>
-          <td>Tos seca</td>
-          <td>y</td>
-          <td>(y * 100)/Total personas</td>
-        </tr>
-        <tr>
-          <td>Cansancio</td>
-          <td>z</td>
-          <td>(z * 100)/Total personas</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div>
-    <div class="col s12">
-      <h5 style="text-align:center;"> Personas contagiadas por este virus: </h5>
-    </div>
-  
-    <div class="col s12" style="text-align:center;"> 
-      <table>
-      <thead>
-        <tr>
-            <th>Personas</th>
-            <th>Numero de individuos</th>
-            <th>Porcentaje respecto a la poblacion total</th>
-        </tr>
-      </thead>
-  
-      <tbody>
-        <tr>
-          <td>Contagiadas</td>
-          <td>p</td>
-          <td>(p * 100)/Total personas</td>
-        </tr>
-        <tr>
-              <td>Fallecidas</td>
-              <td>q</td>
-              <td>(q * 100)/Total personas</td>
-        </tr>
-        <tr>
-              <td>Recuperadas</td>
-              <td>r</td>
-              <td>(r * 100)/Total personas</td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
-        
-  </div>
-</div>
+  <a href="/logout">Cerrar sesión</a>
+  </body>
+</html>
+
 {% endblock %}

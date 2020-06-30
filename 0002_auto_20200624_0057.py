@@ -14,14 +14,20 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='registros',
-            name='fecha',
+            name='dia',
             field=models.DateTimeField(null=True, blank=True),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='registros',
-            name='muerte',
-            field=models.IntegerField(null=True, blank=True, verbose_name=1),
+            name='covid',
+            field=models.CharField(null=True, blank=True, verbose_name=1),
+            preserve_default=False,
+        ),
+        migrations.AddField(
+            model_name='registros',
+            name='sintomas',
+            field=models.CharField(null=True, blank=True),
             preserve_default=False,
         ),
     ]
