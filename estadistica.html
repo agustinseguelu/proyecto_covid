@@ -1,68 +1,49 @@
-<!DOCTYPE html>
-<html lang="es" style='height: 100%;'>
-<head>
-    <title>Covid-19</title>
-    {% load static %}
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
-    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-</head>
-<body class="indigo lighten-5">
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Muertes COVID-19</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="{% url 'index' %}">Index</a></li>
-            <li class="active"><a href="">Estadistica</a></li>
-            <li><a href="{% url 'registro' %}">Registro</a></li>
-            </ul>
-        </div>
-    </nav>
-</body>
-<body class= "deep-purple lighten-3">
-  <div class="container">
-    <div class="row">
+{% include 'base.html' %}
+{% block container %}
+
+
+<div class="row">
 
       <div class="col s12">
         <h1 style="text-align:center;">Estadisticas del Covid-19</h1>
       </div>
+      <blockquote>
+         Este virus mortal, que trajo consigo una pandemia de carecter mundial afecto con diversos sintomas a la población que padecia de este. Este estudio muestral se encoca en Chile, basados en su población total que hoy en día alcanza más de 19 millones de habitantes aproximadamente. 
+      </blockquote>
       <div class="col s12">
-        <h5 style="text-align:center;"> Resumen de sus principales sintomas: </h5>
+        <h3 style="text-align:center;"> Resumen de las personas contagiadas respecto a la poblacion total de Chile: </h3>
       </div>
 
       <div class="col s12" style="text-align:center;"> 
         <table>
-        <thead>
-         <tr>
-              <th>Sintomas</th>
-              <th>Cantidad de contagiados</th>
-              <th>Porcentaje respecto a la poblacion total</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Fiebre</td>
-            <td>x</td>
-            <td>(x * 100)/Total personas</td>
-          </tr>
-          <tr>
-            <td>Tos seca</td>
-            <td>y</td>
-            <td>(y * 100)/Total personas</td>
-          </tr>
-          <tr>
-            <td>Cansancio</td>
-            <td>z</td>
-            <td>(z * 100)/Total personas</td>
-          </tr>
-        </tbody>
-      </table>
+          <thead>
+            <tr>
+                <th>Personas</th>
+                <th>Cantidad de individuos</th>
+                <th>Porcentaje</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr>
+              <td>Contagiadas</td>
+              <td>3000000</td>
+              <td>30%</td>
+            </tr>
+            <tr>
+              <td>No contagiadas</td>
+              <td>16000000</td>
+              <td>70%</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <blockquote>
+        La población Chilena a sufrido el fallecimiento de sus compatriotas respecto a este virus, a continuacion están las estadísticas respecto al total de contagiados. 
+      </blockquote>
       <div>
         <div class="col s12">
-          <h5 style="text-align:center;"> Personas contagiadas por este virus: </h5>
+          <h3 style="text-align:center;"> Personas fallecidas por este virus: </h3>
         </div>
   
         <div class="col s12" style="text-align:center;"> 
@@ -71,31 +52,81 @@
            <tr>
                 <th>Personas</th>
                 <th>Numero de individuos</th>
-                <th>Porcentaje respecto a la poblacion total</th>
+                <th>Porcentaje</th>
             </tr>
           </thead>
-  
           <tbody>
             <tr>
-              <td>Contagiadas</td>
-              <td>p</td>
-              <td>(x * 100)/Total personas</td>
-            </tr>
-            <tr>
               <td>Fallecidas</td>
-              <td>q</td>
-              <td>(y * 100)/Total personas</td>
+              <td>1400000</td>
+              <td>40%</td>
             </tr>
             <tr>
               <td>Recuperadas</td>
-              <td>r</td>
-              <td>(z * 100)/Total personas</td>
+              <td>1600000</td>
+              <td>60%</td>
             </tr>
           </tbody>
         </table>
-      </div>
-        
-   </div>
-  </div>
-</body>
-</html>
+</div>
+
+
+<div class="col s12">
+  <h1 style="text-align:center;">Los sintomas</h1>
+</div>
+<blockquote>
+  El cuerpo humano al sufrir de una perturbación muestra señales, en el caso de este virus muestra los sintomas por los que se puede identificar. Existen muchos de estos, ya que en cada país puede manifestarse diferente, por la condición de sus habitantes. En Chile los más reiterados en los pacientes son los que mencionaremos a continiación.
+</blockquote>
+<h3>
+  Las personas contagiadas por este virus padecieron los siguientes sintomas: 
+</h3>
+  {% for sintoo in sintomaa %}
+  <li>{{sintoo}}</li>
+  {% endfor %}
+<div class="col s12">
+   <h2 style="text-align:center;"> 
+     Estadisticas de los sintomas
+  </h2>
+</div>
+<blockquote>
+  Si bien estos son todos los sintomas registrados por el Covid-19 en Chile, los podemos clasificar en 3.
+  (Las estadisticas son en relación a cuantas personas de los contagiados presentaron dicho sintoma)
+</blockquote>
+<div class="col s12">
+  <h3 style="text-align:center;"> Los más habituales: </h3>
+</div>
+ <table>
+   <thead>
+     <tr>
+         <th>Sintoma</th>
+         <th>Individuos contagiados</th>
+         <th>Porcentaje</th>
+     </tr>
+   </thead>
+
+   <tbody>
+     <tr>
+       <td>Fiebre</td>
+       <td>lala</td>
+       <td>%</td>
+     </tr>
+     <tr>
+       <td>Tos Seca</td>
+       <td>lala</td>
+       <td>%</td>
+     </tr>
+     <tr>
+       <td>Cansancio</td>
+       <td>lala</td>
+       <td>%</td>
+     </tr>
+   </tbody>
+ </table>
+</div>
+<div class="col s12">
+  <h3 style="text-align:center;">Los menos comunes: </h3>
+</div>
+<div class="col s12">
+  <h3 style="text-align:center;"> Los más graves: </h3>
+</div>
+{% endblock %}
