@@ -9,23 +9,16 @@ from .forms import registrosForm
 
 
 def registro(request):
-    form = registrosForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        context= {'form': form }
-        
-        return render(request, 'registro.html', context)
 
-      
-    if request.POST:
-        covidd = request.post.get('covid','')
-        habituales = request.post.get('habituales', '')
-        menos = request.post.get('menos', '')
-        graves = request.post.get('graves', '')
-        fecha = request.post.get('fecha', '')
+    if request.method == 'POST':
+        covidd = request.POST.get('covidd','')
+        habituales = request.POST.get('habituales', '')
+        menos = request.POST.get('menos', '')
+        graves = request.POST.get('graves', '')
+        fecha = request.POST.get('fecha', '')
 
         if (menos== '' or graves=='' or habituales==''):
-            return redirect('registro.html')
+            return redirect('estadistica')
         else:
             nuevo_registro = registros()
             nuevo_registro.dia = fecha
@@ -34,7 +27,7 @@ def registro(request):
             nuevo_registro.sintomas = menos
             nuevo_registro.sintomas = graves
             nuevo_registro.save()
-            return redirect('index.html')
+            return redirect('estadistica')
     
     sintomass = {'habituales': ['Fiebre', 'Tos seca', 'Cansancio', 'Ninguno'],
                   'menos' : ['Molestias y Dolores', 'Dolor de Garganta', 'Diarrea', 'Conjuntivitis', 'Dolores de cabeza', 'Pérdida del olfato o del gusto', 'Erupciones cutáneas o pérdida del color en extremidades', 'Insuficiencia Respiratorias', 'Ninguno'],
