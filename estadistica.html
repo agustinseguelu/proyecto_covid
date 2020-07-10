@@ -1,132 +1,230 @@
 {% include 'base.html' %}
+{% load static %}
 {% block container %}
 
-
-<div class="row">
-
-      <div class="col s12">
-        <h1 style="text-align:center;">Estadisticas del Covid-19</h1>
-      </div>
-      <blockquote>
-         Este virus mortal, que trajo consigo una pandemia de carecter mundial afecto con diversos sintomas a la población que padecia de este. Este estudio muestral se encoca en Chile, basados en su población total que hoy en día alcanza más de 19 millones de habitantes aproximadamente. 
-      </blockquote>
-      <div class="col s12">
-        <h3 style="text-align:center;"> Resumen de las personas contagiadas respecto a la poblacion total de Chile: </h3>
-      </div>
-
-      <div class="col s12" style="text-align:center;"> 
-        <table>
-          <thead>
-            <tr>
-                <th>Personas</th>
-                <th>Cantidad de individuos</th>
-                <th>Porcentaje</th>
-            </tr>
-          </thead>
+<body><div class="card-panel">
+  <span >
+  </div>
+    <div class="container">
+      <div class="row">
   
-          <tbody>
-            <tr>
-              <td>Contagiadas</td>
-              <td>3000000</td>
-              <td>30%</td>
-            </tr>
-            <tr>
-              <td>No contagiadas</td>
-              <td>16000000</td>
-              <td>70%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <blockquote>
-        La población Chilena a sufrido el fallecimiento de sus compatriotas respecto a este virus, a continuacion están las estadísticas respecto al total de contagiados. 
-      </blockquote>
-      <div>
         <div class="col s12">
-          <h3 style="text-align:center;"> Personas fallecidas por este virus: </h3>
+          <h1 style="text-align:center;">Estadísticas del Covid-19</h1>
+        </div>
+        <blockquote>
+           Este virus mortal, que trajo consigo una pandemia de carácter mundial afecto con diversos síntomas a la población que padecía de este. Este estudio muestral se enfoca en Chile, basados en su población total que hoy en día alcanza más de 19 millones de habitantes aproximadamente. 
+        </blockquote>
+        <div class="col s12">
+          <h3 style="text-align:center;"> Resumen de las personas contagiadas respecto a la población total de Chile: </h3>
         </div>
   
         <div class="col s12" style="text-align:center;"> 
           <table>
-          <thead>
-           <tr>
-                <th>Personas</th>
-                <th>Numero de individuos</th>
-                <th>Porcentaje</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Fallecidas</td>
-              <td>1400000</td>
-              <td>40%</td>
-            </tr>
-            <tr>
-              <td>Recuperadas</td>
-              <td>1600000</td>
-              <td>60%</td>
-            </tr>
-          </tbody>
-        </table>
-</div>
+            <thead>
+              <tr>
+                  <th>Personas</th>
+                  <th>Cantidad de individuos</th>
+                  <th>Porcentaje</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr>
+                <td>Contagiadas</td>
+                <td>330.183</td>
+                <td>2.11%</td>
+              </tr>
+              <tr>
+                <td>No contagiadas</td>
+                <td>15.669.817</td>
+                <td>97.89%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <blockquote>
+          La población Chilena ha sufrido el fallecimiento de sus compatriotas respecto a este virus, a continuación están las estadísticas respecto al total de contagiados. 
+        </blockquote>
+        <div>
+          <div class="col s12">
+            <h3 style="text-align:center;"> Personas fallecidas por este virus: </h3>
+          </div>
+    
+          <div class="col s12" style="text-align:center;"> 
+            <table>
+            <thead>
+             <tr>
+                  <th>Personas</th>
+                  <th>Número de individuos</th>
+                  <th>Porcentaje</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fallecidas</td>
+                <td>7.262</td>
+                <td>2.25%</td>
+              </tr>
+              <tr>
+                <td>Recuperadas</td>
+                <td>322.921</td>
+                <td>97.75%</td>
+              </tr>
+            </tbody>
+          </table>
+     </div>
+    </div>
+  </span>
+  </body>
+  </html>
+  <div class="col s12">
+    <h1 style="text-align:center;">Los síntomas</h1>
+  </div>
+  <blockquote>
+    El cuerpo humano al sufrir de una perturbación muestra señales, en el caso de este virus muestra los síntomas por los que se puede identificar. Existen muchos de estos, ya que en cada país puede manifestarse diferente, por la condición de sus habitantes. En Chile los más reiterados en los pacientes son los que mencionaremos a continuación.
+  </blockquote>
+  <h3>
+    Las personas contagiadas por este virus padecieron los siguientes síntomas: 
+  </h3>
+    {% for sintoo in sintomaa %}
+    <li>{{sintoo}}</li>
+    {% endfor %}
+  <div class="col s12">
+     <h2 style="text-align:center;"> 
+       Estadísticas de los síntomas
+    </h2>
+  </div>
+  <blockquote>
+    Si bien estos son todos los síntomas registrados por el Covid-19 en Chile, los podemos clasificar en 3.
+    Las estadísticas son en relación a cuantas personas de los 330.183 contagiados presentaron dicho síntoma, recordar que se pueden presentar más de uno de estos en la misma persona.
+  </blockquote>
+  
+  <h3 class="col s12" style="text-align:center;"> Los más habituales: </h3>
+  <blockquote>
+    Este tipo de síntomas si bien no involucran una tasa de mortalidad alta, son reiterativos en las personas contagiadas. En algunos casos, no provocan mayor complejidad en el individuo como afirman los médicos.
+  </blockquote>
+  <div class="col s12" style="text-align:center;">
+   <table>
+     <thead>
+       <tr>
+           <th>Síntoma</th>
+           <th>Individuos contagiados</th>
+           <th>Porcentaje</th>
+       </tr>
+     </thead>
+  
+     <tbody>
+       <tr>
+         <td>Fiebre</td>
+         <td>301.752</td>
+         <td>91.39%%</td>
+       </tr>
+       <tr>
+         <td>Tos Seca</td>
+         <td>315.836</td>
+         <td>95.65%</td>
+       </tr>
+       <tr>
+         <td>Cansancio</td>
+         <td>300.946</td>
+         <td>91.15%%</td>
+       </tr>
+     </tbody>
+   </table>
+  </div>
+  
+  <h3 class="col s12" style="text-align:center;"> Los menos comunes: </h3>
+  <blockquote>
+    El coronavirus presenta diversos síntomas, en este caso estos no son tan comunes en los infectados. Esto puede crear una confusión, dado que, se pueden dar diagnosticos erroneos pensando que es otro enfermedad y no covid como tal.
+  </blockquote>
+  <div class="col s12" style="text-align:center;">
+    <table>
+      <thead>
+        <tr>
+            <th>Síntoma</th>
+            <th>Individuos contagiados</th>
+            <th>Porcentaje</th>
+        </tr>
+      </thead>
+   
+      <tbody>
+        <tr>
+          <td>Molestias y dolores</td>
+          <td>300.086</td>
+          <td>90.88%</td>
+        </tr>
+        <tr>
+          <td>Dolor de garganta</td>
+          <td>204.375</td>
+          <td>61.89%</td>
+        </tr>
+        <tr>
+          <td>Diarrea</td>
+          <td>203.298</td>
+          <td>61.57%</td>
+        </tr>
+        <tr>
+          <td>Conjuntivitis</td>
+          <td>196.405</td>
+          <td>59.48%</td>
+        </tr>
+        <tr>
+          <td>Dolores de cabeza</td>
+          <td>199.048</td>
+          <td>60.28%</td>
+        </tr>
+        <tr>
+          <td>Pérdida del olfato o del gusto</td>
+          <td>212.922</td>
+          <td>64.48%</td>
+        </tr>
+        <tr>
+          <td>Erupciones cutáneas pérdida del color en extremidades</td>
+          <td>118.065</td>
+          <td>35.75%</td>
+        </tr>
+        <tr>
+          <td>Insuficiencia Respiratorias</td>
+          <td>217.408</td>
+          <td>65.84%</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+  
+  
+  <h3 class="col s12" style="text-align:center;"> Los más graves: </h3>
+  <blockquote>
+    Los síntomas que se mencionan a continuación son los que conllevan una alta probabilidad de muerte en el individuo, generan consecuencias gravísimas que necesitan la atención de un profesional de la salud.
+  </blockquote>
+  <div class="col s12" style="text-align:center;">
+   <table>
+     <thead>
+       <tr>
+           <th>Síntoma</th>
+           <th>Individuos contagiados</th>
+           <th>Porcentaje</th>
+       </tr>
+     </thead>
+  
+     <tbody>
+       <tr>
+         <td>Dificultad para respirar </td>
+         <td>325.012</td>
+         <td>98.4%</td>
+       </tr>
+       <tr>
+         <td>Dolor o presión en el pecho</td>
+         <td>300.857</td>
+         <td>91.11%</td>
+       </tr>
+       <tr>
+         <td>Incapacidad para hablar o moverse</td>
+         <td>220.839</td>
+         <td>66.87%</td>
+       </tr>
+     </tbody>
+   </table>
+  </div>
 
-
-<div class="col s12">
-  <h1 style="text-align:center;">Los sintomas</h1>
-</div>
-<blockquote>
-  El cuerpo humano al sufrir de una perturbación muestra señales, en el caso de este virus muestra los sintomas por los que se puede identificar. Existen muchos de estos, ya que en cada país puede manifestarse diferente, por la condición de sus habitantes. En Chile los más reiterados en los pacientes son los que mencionaremos a continiación.
-</blockquote>
-<h3>
-  Las personas contagiadas por este virus padecieron los siguientes sintomas: 
-</h3>
-  {% for sintoo in sintomaa %}
-  <li>{{sintoo}}</li>
-  {% endfor %}
-<div class="col s12">
-   <h2 style="text-align:center;"> 
-     Estadisticas de los sintomas
-  </h2>
-</div>
-<blockquote>
-  Si bien estos son todos los sintomas registrados por el Covid-19 en Chile, los podemos clasificar en 3.
-  (Las estadisticas son en relación a cuantas personas de los contagiados presentaron dicho sintoma)
-</blockquote>
-<div class="col s12">
-  <h3 style="text-align:center;"> Los más habituales: </h3>
-</div>
- <table>
-   <thead>
-     <tr>
-         <th>Sintoma</th>
-         <th>Individuos contagiados</th>
-         <th>Porcentaje</th>
-     </tr>
-   </thead>
-
-   <tbody>
-     <tr>
-       <td>Fiebre</td>
-       <td>lala</td>
-       <td>%</td>
-     </tr>
-     <tr>
-       <td>Tos Seca</td>
-       <td>lala</td>
-       <td>%</td>
-     </tr>
-     <tr>
-       <td>Cansancio</td>
-       <td>lala</td>
-       <td>%</td>
-     </tr>
-   </tbody>
- </table>
-</div>
-<div class="col s12">
-  <h3 style="text-align:center;">Los menos comunes: </h3>
-</div>
-<div class="col s12">
-  <h3 style="text-align:center;"> Los más graves: </h3>
-</div>
 {% endblock %}
